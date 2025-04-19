@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.2.0",
+  "default_locale": "ru",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "downloads",
+    "power"
+  ],
+  "host_permissions": [
+    "*://biblioclub.ru/*",
+    "*://reader.lanbook.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://biblioclub.ru/index.php?page=book_view_red*",
+        "*://reader.lanbook.com/book/*"
+      ],
+      "js": [
+        "libs/pdfkit.standalone.js",
+        "libs/blob-stream.min.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

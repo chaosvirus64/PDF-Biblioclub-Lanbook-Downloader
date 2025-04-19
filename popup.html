@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="__MSG_extLocale__">
+<head>
+  <meta charset="UTF-8">
+  <title>__MSG_popupTitle__</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h2 data-i18n="popupTitle"></h2>
+  <div class="page-range">
+    <label data-i18n="fromLabel" for="start-page"></label>
+    <input type="number" id="start-page" min="1" value="1">
+    <label data-i18n="toLabel" for="end-page"></label>
+    <input type="number" id="end-page" min="1" value="1">
+  </div>
+  <button id="download-btn" data-i18n="downloadBtn"></button>
+  <div id="progress-container" hidden>
+    <progress id="progress-bar" max="100" value="0"></progress>
+    <span id="progress-text"></span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
